@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="webpage.css">
+</head>
+<body> 
+  <div class="train-track" id="trainTrack">
+    <div class="train-car">
+      <a href="project1.html">
+        <img src="images/project1.png" alt="Project 1">
+      </a>
+    </div>
+    <div class="train-car">
+      <a href="project2.html">
+        <img src="images/project2.png" alt="Project 2">
+      </a>
+    </div>
+    <div class="train-car">
+      <a href="project3.html">
+        <img src="images/project3.png" alt="Project 3">
+      </a>
+    </div>
+    <div class="train-car">
+      <a href="project4.html">
+        <img src="images/project4.png" alt="Project 4">
+      </a>
+    </div>
+    <div class="train-car">
+      <a href="project5.html">
+        <img src="images/project5.png" alt="Project 5">
+      </a>
+    </div>
+  </div>
+
+  
+  <script>
+    const trainTrack = document.getElementById('trainTrack');
+    const trainImages = document.querySelectorAll('.train-car img');
+
+    trainImages.forEach(img => {
+      img.addEventListener('mouseenter', () => {
+        trainTrack.classList.add('paused');
+      });
+
+      img.addEventListener('mouseleave', () => {
+        trainTrack.classList.remove('paused');
+      });
+    });
+  </script>
+</body>
+</html>
